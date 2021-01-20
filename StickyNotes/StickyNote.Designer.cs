@@ -77,9 +77,13 @@ namespace StickyNotes
             this.Controls.Add(this.btnCollapse);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtText);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "StickyNote";
             this.Text = "Sticky Note";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FishyNote_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FishyNote_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FishyNote_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
