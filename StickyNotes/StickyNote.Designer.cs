@@ -42,6 +42,7 @@ namespace StickyNotes
             this.txtText.Size = new System.Drawing.Size(776, 328);
             this.txtText.TabIndex = 0;
             this.txtText.Text = "Enter your text here...";
+            this.txtText.Click += new System.EventHandler(this.txtText_Click);
             // 
             // btnDelete
             // 
@@ -51,6 +52,7 @@ namespace StickyNotes
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "X";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCollapse
             // 
@@ -62,12 +64,13 @@ namespace StickyNotes
             this.btnCollapse.TabIndex = 2;
             this.btnCollapse.Text = "Collapse Note";
             this.btnCollapse.UseVisualStyleBackColor = false;
-            this.btnCollapse.Click += new System.EventHandler(this.button1_Click);
+            this.btnCollapse.Click += new System.EventHandler(this.btnCollapse_Click);
             // 
             // StickyNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(800, 450);
