@@ -14,7 +14,7 @@ namespace StickyNotes
     {
         // CREATE a new sticky note when 'New Note' button is clicked
 
-
+        // DECLARE a boolean variable for if the note is expanded or collapsed
         string noteToggle = "expanded";
 
         public StickyNote()
@@ -22,15 +22,18 @@ namespace StickyNotes
             InitializeComponent();
         }
 
+        // Collapse/expand sticky note on click
         private void btnCollapse_Click(object sender, EventArgs e)
         {
             switch (noteToggle)
             {
+                // Collapse sticky note and set boolean to "collapsed"
                 case "expanded":
                     txtText.Visible = false;
                     noteToggle = "collapsed";
                     btnCollapse.Text = "Expand Note";
                     return;
+                // Expand sticky note and set boolean to "expanded"
                 case "collapsed":
                     txtText.Visible = true;
                     btnCollapse.Text = "Collapse Note";
@@ -39,11 +42,13 @@ namespace StickyNotes
             }
         }
 
+        // Dispose sticky note on click
         private void btnDelete_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
+        // Clear textbox on click
         private void txtText_Click(object sender, EventArgs e)
         {
             txtText.Text = "";

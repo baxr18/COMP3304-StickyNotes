@@ -25,6 +25,7 @@ namespace StickyNotes
         // CREATE new sticky note instance
         private void btnNew_Click(object sender, EventArgs e)
         {
+            _newNote = new StickyNote();
             _newNote.Show();
         }
     }
