@@ -94,6 +94,7 @@ namespace StickyNotes
             // RESET _mouseDown to false:
             _mouseDown = false;
         }
+
         #endregion
     }
 }

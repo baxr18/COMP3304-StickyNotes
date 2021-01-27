@@ -16,7 +16,7 @@ namespace StickyNotes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StickyNotes());
+            Controller controller = new Controller();
         }
     }
 }
