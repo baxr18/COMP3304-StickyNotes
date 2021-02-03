@@ -25,14 +25,14 @@ namespace StickyNotes
             return _text;
         }
 
-        public Image RetriveImage()
+        public Image RetrieveImage()
         {
             return _image;
         }
 
         internal void Dispose()
         {
-            //_image.Dispose();
+            _image.Dispose();
         }
     }
 }

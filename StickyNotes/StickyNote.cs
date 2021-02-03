@@ -27,17 +27,19 @@ namespace StickyNotes
 
         private string _text;
 
-        public StickyNote(int id, RetrieveText retrieveText, ReplaceText replaceText, DeleteStickyNote deleteMe)
+        public StickyNote(int id, Image image, RetrieveText retrieveText, ReplaceText replaceText, DeleteStickyNote deleteMe)
         {
+            InitializeComponent();
+
             _id = id;
+
+            this.btnCollapse.Image = image;
 
             _deleteThis = deleteMe;
 
             _retrieveText = retrieveText;
 
             _replaceText = replaceText;
-            
-            InitializeComponent();
         }
 
         // Collapse/expand sticky note on click

@@ -7,7 +7,7 @@ namespace StickyNotes
     {
         void Initialise(String text, Image image);
 
-        Image RetriveImage();
+        Image RetrieveImage();
 
         void ChangeText(String newText);
 

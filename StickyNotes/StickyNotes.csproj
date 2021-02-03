@@ -50,6 +50,7 @@
     <Compile Include="DataElement.cs" />
     <Compile Include="Delegate.cs" />
     <Compile Include="IDataElement.cs" />
+    <Compile Include="IImageData.cs" />
     <Compile Include="INoteData.cs" />
     <Compile Include="ITextData.cs" />
     <Compile Include="NoteData.cs" />
@@ -95,6 +96,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FishAssets\AnglerFish_Lit.png" />
+    <Content Include="FishAssets\AnglerFish_Unlit.png" />
+    <Content Include="FishAssets\AquariumBackground.png" />
+    <Content Include="FishAssets\JavaFish.png" />
+    <Content Include="FishAssets\OrangeFish.png" />
+    <Content Include="FishAssets\PiranhaGreen.png" />
+    <Content Include="FishAssets\PiranhaRed.png" />
+    <Content Include="FishAssets\Seahorse.png" />
+    <Content Include="FishAssets\Urchin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,19 +12,13 @@ namespace StickyNotes
 {
     public partial class StickyNotes : Form
     {
-        // CREATE a new sticky note when 'Add Note' is clicked
-
-        // DECLARE a new sticky note
-        //Form _newNote = new StickyNote();
-
-        // DECLARE a list of note instances to store to
-        //IList<Form> _noteForms = new List<Form>();
-
         private IDictionary<int, Form> _noteForms;
 
         private ITextData _noteText;
 
         private INoteData _noteData;
+
+        private IImageData _noteImages;
 
         int _nextNoteKey = 0;
 
@@ -34,6 +28,7 @@ namespace StickyNotes
             _noteForms = noteContainer;
             _noteData = noteData;
             _noteText = _noteData as ITextData;
+            _noteImages = _noteData as IImageData;
         }
 
         public void RemoveNote(int noteKey)
@@ -47,7 +42,7 @@ namespace StickyNotes
         private void btnNew_Click(object sender, EventArgs e)
         {
             _noteData.AddItem(_nextNoteKey);
-            StickyNote _newNote = new StickyNote(_nextNoteKey, _noteText.RetrieveText, _noteText.ChangeText, this.RemoveNote);
+            StickyNote _newNote = new StickyNote(_nextNoteKey, _noteImages.RetrieveImage(_nextNoteKey), _noteText.RetrieveText, _noteText.ChangeText, this.RemoveNote);
             _noteForms.Add(_nextNoteKey, _newNote);
             _noteForms[_nextNoteKey].Show();
             _nextNoteKey++;
