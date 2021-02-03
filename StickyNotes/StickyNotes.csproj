@@ -47,11 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="DataElement.cs" />
+    <Compile Include="Delegate.cs" />
+    <Compile Include="IDataElement.cs" />
+    <Compile Include="INoteData.cs" />
+    <Compile Include="NoteData.cs" />
+    <Compile Include="StickyNotes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="StickyNotes.Designer.cs">
+      <DependentUpon>StickyNotes.cs</DependentUpon>
     </Compile>
     <Compile Include="IInterface.cs" />
     <Compile Include="Program.cs" />
@@ -62,8 +67,8 @@
     <Compile Include="StickyNote.Designer.cs">
       <DependentUpon>StickyNote.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="StickyNotes.resx">
+      <DependentUpon>StickyNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

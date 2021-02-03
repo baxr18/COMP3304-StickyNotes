@@ -58,7 +58,7 @@ namespace StickyNotes
             // 
             this.btnCollapse.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnCollapse.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCollapse.Location = new System.Drawing.Point(12, 12);
+            this.btnCollapse.Location = new System.Drawing.Point(3, 3);
             this.btnCollapse.Name = "btnCollapse";
             this.btnCollapse.Size = new System.Drawing.Size(105, 92);
             this.btnCollapse.TabIndex = 2;

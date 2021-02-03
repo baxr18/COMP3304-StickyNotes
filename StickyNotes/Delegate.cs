@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace StickyNotes
 {
-    interface IInterface
-    {
-
-    }
+    public delegate void DeleteStickyNote(int key);
 }

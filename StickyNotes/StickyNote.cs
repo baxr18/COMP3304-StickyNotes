@@ -17,8 +17,16 @@ namespace StickyNotes
         // DECLARE a boolean variable for if the note is expanded or collapsed
         string noteToggle = "expanded";
 
-        public StickyNote()
+        private DeleteStickyNote _deleteThis;
+
+        private int _id;
+
+        public StickyNote(int id, DeleteStickyNote deleteMe)
         {
+            _id = id;
+
+            _deleteThis = deleteMe;
+
             InitializeComponent();
         }
 
@@ -30,12 +38,14 @@ namespace StickyNotes
                 // Collapse sticky note and set boolean to "collapsed"
                 case "expanded":
                     txtText.Visible = false;
+                    btnDelete.Visible = false;
                     noteToggle = "collapsed";
                     btnCollapse.Text = "Expand Note";
                     return;
                 // Expand sticky note and set boolean to "expanded"
                 case "collapsed":
                     txtText.Visible = true;
+                    btnDelete.Visible = true;
                     btnCollapse.Text = "Collapse Note";
                     noteToggle = "expanded";
                     return;
@@ -46,12 +56,13 @@ namespace StickyNotes
         private void btnDelete_Click(object sender, EventArgs e)
         {
             this.Dispose();
+            this._deleteThis(_id);
         }
 
         // Clear textbox on click
         private void txtText_Click(object sender, EventArgs e)
         {
-            txtText.Text = "";
+            this.txtText.Text = "";
         }
 
         #region Code Snippet: makes this borderless window movable

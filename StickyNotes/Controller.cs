@@ -10,11 +10,16 @@ namespace StickyNotes
     class Controller
     {
         // INSTANTIATE a new list of note instances
-        List<Form> notesList = new List<Form>();
+        IList<Form> notesList = new List<Form>();
 
+        // INSTANTIATE a new 'StickyNotes' by passing list as reference
         public Controller()
         {
-            Application.Run(new StickyNotes(ref notesList));
+            IDictionary<int, Form> noteForms = new Dictionary<int, Form>();
+
+            INoteData noteData = new NoteData();
+
+            Application.Run(new StickyNotes(noteForms, noteData));
         }
     }
 }
