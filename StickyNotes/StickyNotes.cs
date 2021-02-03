@@ -22,6 +22,8 @@ namespace StickyNotes
 
         private IDictionary<int, Form> _noteForms;
 
+        private ITextData _noteText;
+
         private INoteData _noteData;
 
         int _nextNoteKey = 0;
@@ -31,6 +33,7 @@ namespace StickyNotes
             InitializeComponent();
             _noteForms = noteContainer;
             _noteData = noteData;
+            _noteText = _noteData as ITextData;
         }
 
         public void RemoveNote(int noteKey)
@@ -44,7 +47,7 @@ namespace StickyNotes
         private void btnNew_Click(object sender, EventArgs e)
         {
             _noteData.AddItem(_nextNoteKey);
-            StickyNote _newNote = new StickyNote(_nextNoteKey, this.RemoveNote);
+            StickyNote _newNote = new StickyNote(_nextNoteKey, _noteText.RetrieveText, _noteText.ChangeText, this.RemoveNote);
             _noteForms.Add(_nextNoteKey, _newNote);
             _noteForms[_nextNoteKey].Show();
             _nextNoteKey++;

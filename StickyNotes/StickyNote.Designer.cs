@@ -43,6 +43,7 @@ namespace StickyNotes
             this.txtText.TabIndex = 0;
             this.txtText.Text = "Enter your text here...";
             this.txtText.Click += new System.EventHandler(this.txtText_Click);
+            this.txtText.TextChanged += new System.EventHandler(this.txtText_TextChanged);
             // 
             // btnDelete
             // 

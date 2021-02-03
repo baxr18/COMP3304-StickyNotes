@@ -51,6 +51,7 @@
     <Compile Include="Delegate.cs" />
     <Compile Include="IDataElement.cs" />
     <Compile Include="INoteData.cs" />
+    <Compile Include="ITextData.cs" />
     <Compile Include="NoteData.cs" />
     <Compile Include="StickyNotes.cs">
       <SubType>Form</SubType>

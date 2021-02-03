@@ -19,14 +19,24 @@ namespace StickyNotes
 
         private DeleteStickyNote _deleteThis;
 
+        private RetrieveText _retrieveText;
+
+        private ReplaceText _replaceText;
+
         private int _id;
 
-        public StickyNote(int id, DeleteStickyNote deleteMe)
+        private string _text;
+
+        public StickyNote(int id, RetrieveText retrieveText, ReplaceText replaceText, DeleteStickyNote deleteMe)
         {
             _id = id;
 
             _deleteThis = deleteMe;
 
+            _retrieveText = retrieveText;
+
+            _replaceText = replaceText;
+            
             InitializeComponent();
         }
 
@@ -62,7 +72,13 @@ namespace StickyNotes
         // Clear textbox on click
         private void txtText_Click(object sender, EventArgs e)
         {
-            this.txtText.Text = "";
+            this.txtText.Text = _retrieveText(_id);
+        }
+
+        private void txtText_TextChanged(object sender, EventArgs e)
+        {
+            _text = txtText.Text;
+            _replaceText(_id, _text);
         }
 
         #region Code Snippet: makes this borderless window movable
@@ -107,5 +123,6 @@ namespace StickyNotes
         }
 
         #endregion
+
     }
 }

@@ -1,13 +1,16 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace StickyNotes
 {
     internal interface IDataElement
     {
-        void Initialise(string text, Image image);
+        void Initialise(String text, Image image);
 
         Image RetriveImage();
 
-        void ChangeText(string newText);
+        void ChangeText(String newText);
+
+        String RetrieveText();
     }
 }

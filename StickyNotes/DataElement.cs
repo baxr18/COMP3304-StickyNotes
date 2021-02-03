@@ -5,24 +5,34 @@ namespace StickyNotes
 {
     internal class DataElement : IDataElement
     {
-        public void ChangeText(string newText)
+        private String _text;
+
+        private Image _image;
+
+        public void Initialise(String text, Image image)
         {
-            throw new System.NotImplementedException();
+            _text = text;
+            _image = image;
         }
 
-        public void Initialise(string text, Image image)
+        public void ChangeText(String newText)
         {
-            throw new System.NotImplementedException();
+            _text = newText;
+        }
+
+        public String RetrieveText()
+        {
+            return _text;
         }
 
         public Image RetriveImage()
         {
-            throw new System.NotImplementedException();
+            return _image;
         }
 
         internal void Dispose()
         {
-
+            //_image.Dispose();
         }
     }
 }
