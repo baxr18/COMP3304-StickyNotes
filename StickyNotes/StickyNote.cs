@@ -12,21 +12,28 @@ namespace StickyNotes
 {
     public partial class StickyNote : Form
     {
-        // CREATE a new sticky note when 'New Note' button is clicked
-
         // DECLARE a boolean variable for if the note is expanded or collapsed
         string noteToggle = "expanded";
 
+        // DECLARE delegate methods
         private DeleteStickyNote _deleteThis;
-
         private RetrieveText _retrieveText;
-
         private ReplaceText _replaceText;
 
+        // DECLARE the ID of a sticky note instance
         private int _id;
 
+        // DECLARE the text associated with a sticky note instance
         private string _text;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="image"></param>
+        /// <param name="retrieveText"></param>
+        /// <param name="replaceText"></param>
+        /// <param name="deleteMe"></param>
         public StickyNote(int id, Image image, RetrieveText retrieveText, ReplaceText replaceText, DeleteStickyNote deleteMe)
         {
             InitializeComponent();
@@ -42,7 +49,11 @@ namespace StickyNotes
             _replaceText = replaceText;
         }
 
-        // Collapse/expand sticky note on click
+        /// <summary>
+        /// Collapse/expand sticky note on click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCollapse_Click(object sender, EventArgs e)
         {
             switch (noteToggle)
@@ -64,19 +75,34 @@ namespace StickyNotes
             }
         }
 
-        // Dispose sticky note on click
+        /// <summary>
+        /// DISPOSE sticky note instance on click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             this.Dispose();
+
+            // DELETE the ID associated with the sticky note from 
             this._deleteThis(_id);
         }
 
-        // Clear textbox on click
+        /// <summary>
+        /// CLEAR textbox on click and retrieve the stored text for a sticky note based on its ID
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtText_Click(object sender, EventArgs e)
         {
             this.txtText.Text = _retrieveText(_id);
         }
 
+        /// <summary>
+        /// UPDATE the stored text for a sticky note
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtText_TextChanged(object sender, EventArgs e)
         {
             _text = txtText.Text;

@@ -9,16 +9,16 @@ namespace StickyNotes
 {
     class Controller
     {
-        // INSTANTIATE a new list of note instances
-        IList<Form> notesList = new List<Form>();
-
         // INSTANTIATE a new 'StickyNotes' by passing list as reference
         public Controller()
         {
+            // DECLARE a new dictionary to store sticky note instances
             IDictionary<int, Form> noteForms = new Dictionary<int, Form>();
 
+            // INSTANTIATE a new NoteData component
             INoteData noteData = new NoteData();
 
+            // RUN the initial application by passing the newly created dictionary and NoteData
             Application.Run(new StickyNotes(noteForms, noteData));
         }
     }
