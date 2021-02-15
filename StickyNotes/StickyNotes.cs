@@ -28,7 +28,7 @@ namespace StickyNotes
         /// </summary>
         /// <param name="noteContainer"></param>
         /// <param name="noteData"></param>
-        public StickyNotes(IDictionary<int, Form> noteContainer, INoteData noteData)
+        public StickyNotes(IFactory<Form> formFactory, IDictionary<int, Form> noteContainer, INoteData noteData)
         {
             InitializeComponent();
             // SET noteContainer and noteData to dictionary and NoteData interfaces
