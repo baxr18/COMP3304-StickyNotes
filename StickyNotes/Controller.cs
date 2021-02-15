@@ -12,6 +12,7 @@ namespace StickyNotes
         // INSTANTIATE a new 'StickyNotes' by passing list as reference
         public Controller()
         {
+
             IServiceLocator factoryLocator = new FactoryLocator();
 
             // DECLARE a new dictionary to store sticky note instances
